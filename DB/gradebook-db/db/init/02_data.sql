@@ -1,4 +1,4 @@
--- Sample data (6 students, 4 subjects, 31 grades)
+-- Sample data (6 students, 4 subjects, 34 grades)
 
 INSERT INTO students (first_name, last_name) VALUES
     ('Ivan',   'Petrov'),
@@ -52,4 +52,11 @@ INSERT INTO grades (student_id, subject_id, grade, graded_on) VALUES
     (6, 1, 5, '2026-09-18'),
     (6, 2, 5, '2026-09-22'),
     (6, 4, 5, '2026-10-08'),
-    (6, 4, 6, '2026-10-22');
+    (6, 4, 6, '2026-10-22'),
+    -- Same date, different subjects (the task says this must be possible):
+    -- 2026-10-02 already has Mathematics grades -> Ivan also gets one in Physics
+    (1, 4, 4, '2026-10-02'),
+    -- 2026-09-22 already has Bulgarian Language grades -> Elena also gets one in Informatics
+    (4, 3, 6, '2026-09-22'),
+    -- 2026-10-08 already has Physics grades -> Nikolay gets one in Mathematics
+    (5, 1, 4, '2026-10-08');

@@ -1,0 +1,5 @@
+# Assignment 5 – Electronic Gradebook
+
+## Decisions I made and why
+
+I made three tables: `students`, `subjects` and `grades`. A student and a subject are stored once, and every single grade is one row in `grades` that points to them with the foreign keys `student_id` and `subject_id`, so one student can have many grades in one subject and the database refuses a grade for a student or subject that does not exist. Every table has its own `id` as PRIMARY KEY, and I did not make the date UNIQUE, because on one day there can be grades in different subjects. The rule "grade from 2 to 6" is a `CHECK (grade BETWEEN 2 AND 6)` in the table itself, so no program or person can bypass it; when I tried to insert a grade of 7 the database answered `ERROR: new row for relation "grades" violates check constraint "grades_grade_check"`. I deliberately do not store the average grade or the number of grades, because they can always be calculated with `AVG()` and `COUNT()` and a stored copy would become wrong as soon as a new grade is added.

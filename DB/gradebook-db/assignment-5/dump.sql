@@ -2,10 +2,9 @@
 -- PostgreSQL database dump
 --
 
-\restrict evK2tndwsIoauKbWl2OFWVb3Xwy0dhMlIo0qh2ONwv8CPKoEap6wWd4Jko2KJuf
 
--- Dumped from database version 16.15 (Debian 16.15-1.pgdg13+2)
--- Dumped by pg_dump version 16.15 (Debian 16.15-1.pgdg13+2)
+-- Dumped from database version 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)
+-- Dumped by pg_dump version 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -186,6 +185,9 @@ COPY public.grades (id, student_id, subject_id, grade, graded_on) FROM stdin;
 29	6	2	5	2026-09-22
 30	6	4	5	2026-10-08
 31	6	4	6	2026-10-22
+32	1	4	4	2026-10-02
+33	4	3	6	2026-09-22
+34	5	1	4	2026-10-08
 \.
 
 
@@ -219,7 +221,7 @@ COPY public.subjects (id, name) FROM stdin;
 -- Name: grades_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.grades_id_seq', 32, true);
+SELECT pg_catalog.setval('public.grades_id_seq', 34, true);
 
 
 --
@@ -288,5 +290,4 @@ ALTER TABLE ONLY public.grades
 -- PostgreSQL database dump complete
 --
 
-\unrestrict evK2tndwsIoauKbWl2OFWVb3Xwy0dhMlIo0qh2ONwv8CPKoEap6wWd4Jko2KJuf
 
